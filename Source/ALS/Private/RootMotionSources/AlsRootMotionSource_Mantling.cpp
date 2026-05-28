@@ -166,7 +166,7 @@ UScriptStruct* FAlsRootMotionSource_Mantling::GetScriptStruct() const
 FString FAlsRootMotionSource_Mantling::ToSimpleString() const
 {
 	TStringBuilder<256> StringBuilder{
-		InPlace, ALS_GET_TYPE_STRING(FAlsRootMotionSource_Mantling), TEXTVIEW(" ("), InstanceName, TEXTVIEW(", "), LocalID, TEXT(')')
+		InPlace, ALS_GET_TYPE_STRING_ANSI(FAlsRootMotionSource_Mantling), ANSITEXTVIEW(" ("), InstanceName, ANSITEXTVIEW(", "), LocalID, ')'
 	};
 
 	return FString{StringBuilder};

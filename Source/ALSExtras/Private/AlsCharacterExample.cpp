@@ -11,7 +11,7 @@
 
 AAlsCharacterExample::AAlsCharacterExample()
 {
-	Camera = CreateDefaultSubobject<UAlsCameraComponent>(FName{TEXTVIEW("Camera")});
+	Camera = CreateDefaultSubobject<UAlsCameraComponent>(FName{ANSITEXTVIEW("Camera")});
 	Camera->SetupAttachment(GetMesh());
 	Camera->SetRelativeRotation_Direct({0.0f, 90.0f, 0.0f});
 }

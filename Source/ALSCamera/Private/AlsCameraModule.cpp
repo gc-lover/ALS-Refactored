@@ -33,18 +33,18 @@ void FAlsCameraModule::Console_OnRegisterAutoCompleteEntries(TArray<FAutoComplet
 	const auto CommandColor{GetDefault<UConsoleSettings>()->AutoCompleteCommandColor};
 
 	auto* Command{&AutoCompleteCommands.AddDefaulted_GetRef()};
-	Command->Command = FString{TEXTVIEW("ShowDebug Als.CameraCurves")};
-	Command->Desc = FString{TEXTVIEW("Displays camera animation curves.")};
+	Command->Command = FString{ANSITEXTVIEW("ShowDebug Als.CameraCurves")};
+	Command->Desc = FString{ANSITEXTVIEW("Displays camera animation curves.")};
 	Command->Color = CommandColor;
 
 	Command = &AutoCompleteCommands.AddDefaulted_GetRef();
-	Command->Command = FString{TEXTVIEW("ShowDebug Als.CameraShapes")};
-	Command->Desc = FString{TEXTVIEW("Displays camera debug shapes.")};
+	Command->Command = FString{ANSITEXTVIEW("ShowDebug Als.CameraShapes")};
+	Command->Desc = FString{ANSITEXTVIEW("Displays camera debug shapes.")};
 	Command->Color = CommandColor;
 
 	Command = &AutoCompleteCommands.AddDefaulted_GetRef();
-	Command->Command = FString{TEXTVIEW("ShowDebug Als.CameraTraces")};
-	Command->Desc = FString{TEXTVIEW("Displays camera traces.")};
+	Command->Command = FString{ANSITEXTVIEW("ShowDebug Als.CameraTraces")};
+	Command->Desc = FString{ANSITEXTVIEW("Displays camera traces.")};
 	Command->Color = CommandColor;
 }
 #endif

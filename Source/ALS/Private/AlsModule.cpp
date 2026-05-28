@@ -24,7 +24,7 @@ void FAlsModule::StartupModule()
 #endif
 
 #if WITH_EDITOR
-	auto& MessageLog{FModuleManager::LoadModuleChecked<FMessageLogModule>(FName{TEXTVIEW("MessageLog")})};
+	auto& MessageLog{FModuleManager::LoadModuleChecked<FMessageLogModule>(FName{ANSITEXTVIEW("MessageLog")})};
 
 	FMessageLogInitializationOptions MessageLogOptions;
 	MessageLogOptions.bShowFilters = true;
@@ -51,33 +51,33 @@ void FAlsModule::Console_OnRegisterAutoCompleteEntries(TArray<FAutoCompleteComma
 	const auto CommandColor{GetDefault<UConsoleSettings>()->AutoCompleteCommandColor};
 
 	auto* Command{&AutoCompleteCommands.AddDefaulted_GetRef()};
-	Command->Command = FString{TEXTVIEW("Stat Als")};
-	Command->Desc = FString{TEXTVIEW("Displays ALS performance statistics.")};
+	Command->Command = FString{ANSITEXTVIEW("Stat Als")};
+	Command->Desc = FString{ANSITEXTVIEW("Displays ALS performance statistics.")};
 	Command->Color = CommandColor;
 
 	Command = &AutoCompleteCommands.AddDefaulted_GetRef();
-	Command->Command = FString{TEXTVIEW("ShowDebug Als.Curves")};
-	Command->Desc = FString{TEXTVIEW("Displays animation curves.")};
+	Command->Command = FString{ANSITEXTVIEW("ShowDebug Als.Curves")};
+	Command->Desc = FString{ANSITEXTVIEW("Displays animation curves.")};
 	Command->Color = CommandColor;
 
 	Command = &AutoCompleteCommands.AddDefaulted_GetRef();
-	Command->Command = FString{TEXTVIEW("ShowDebug Als.State")};
-	Command->Desc = FString{TEXTVIEW("Displays character state.")};
+	Command->Command = FString{ANSITEXTVIEW("ShowDebug Als.State")};
+	Command->Desc = FString{ANSITEXTVIEW("Displays character state.")};
 	Command->Color = CommandColor;
 
 	Command = &AutoCompleteCommands.AddDefaulted_GetRef();
-	Command->Command = FString{TEXTVIEW("ShowDebug Als.Shapes")};
-	Command->Desc = FString{TEXTVIEW("Displays debug shapes.")};
+	Command->Command = FString{ANSITEXTVIEW("ShowDebug Als.Shapes")};
+	Command->Desc = FString{ANSITEXTVIEW("Displays debug shapes.")};
 	Command->Color = CommandColor;
 
 	Command = &AutoCompleteCommands.AddDefaulted_GetRef();
-	Command->Command = FString{TEXTVIEW("ShowDebug Als.Traces")};
-	Command->Desc = FString{TEXTVIEW("Displays animation traces.")};
+	Command->Command = FString{ANSITEXTVIEW("ShowDebug Als.Traces")};
+	Command->Desc = FString{ANSITEXTVIEW("Displays animation traces.")};
 	Command->Color = CommandColor;
 
 	Command = &AutoCompleteCommands.AddDefaulted_GetRef();
-	Command->Command = FString{TEXTVIEW("ShowDebug Als.Mantling")};
-	Command->Desc = FString{TEXTVIEW("Displays mantling traces.")};
+	Command->Command = FString{ANSITEXTVIEW("ShowDebug Als.Mantling")};
+	Command->Desc = FString{ANSITEXTVIEW("Displays mantling traces.")};
 	Command->Color = CommandColor;
 }
 #endif

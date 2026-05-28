@@ -217,7 +217,7 @@ bool AAlsCharacter::StartMantling(const FAlsMantlingTraceSettings& TraceSettings
 
 	// Trace forward to find an object the character cannot walk on.
 
-	static const FName ForwardTraceTag{FString::Printf(TEXT("%hs (Forward Trace)"), __FUNCTION__)};
+	static const FName ForwardTraceTag{TStringView{FAnsiString::Printf("%s (Forward Trace)", __FUNCTION__)}};
 
 	auto ForwardTraceStart{CapsuleBottomLocation - ForwardTraceDirection * CapsuleRadius};
 	ForwardTraceStart.Z += (TraceSettings.LedgeHeight.X + TraceSettings.LedgeHeight.Y) *
@@ -257,7 +257,7 @@ bool AAlsCharacter::StartMantling(const FAlsMantlingTraceSettings& TraceSettings
 
 	// Trace downward from the first trace's impact point and determine if the hit location is walkable.
 
-	static const FName DownwardTraceTag{FString::Printf(TEXT("%hs (Downward Trace)"), __FUNCTION__)};
+	static const FName DownwardTraceTag{TStringView{FAnsiString::Printf("%s (Downward Trace)", __FUNCTION__)}};
 
 	const FVector2D TargetLocationOffset{TargetDirection * (TraceSettings.TargetLocationOffset * CapsuleScale)};
 
@@ -312,7 +312,7 @@ bool AAlsCharacter::StartMantling(const FAlsMantlingTraceSettings& TraceSettings
 
 	// Check that there is enough free space for the capsule at the target location.
 
-	static const FName TargetLocationTraceTag{FString::Printf(TEXT("%hs (Target Location Overlap)"), __FUNCTION__)};
+	static const FName TargetLocationTraceTag{TStringView{FAnsiString::Printf("%s (Target Location Overlap)", __FUNCTION__)}};
 
 	const FVector TargetLocation{
 		DownwardTraceHit.Location.X,
@@ -348,7 +348,7 @@ bool AAlsCharacter::StartMantling(const FAlsMantlingTraceSettings& TraceSettings
 	// Perform additional overlap at the approximate start location to
 	// ensure there are no vertical obstacles on the path, such as a ceiling.
 
-	static const FName StartLocationTraceTag{FString::Printf(TEXT("%hs (Start Location Overlap)"), __FUNCTION__)};
+	static const FName StartLocationTraceTag{TStringView{FAnsiString::Printf("%s (Start Location Overlap)", __FUNCTION__)}};
 
 	const FVector2D StartLocationOffset{TargetDirection * (TraceSettings.StartLocationOffset * CapsuleScale)};
 

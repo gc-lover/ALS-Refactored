@@ -19,7 +19,7 @@ FString UAlsAnimNotify_SetGroundedEntryMode::GetNotifyName_Implementation() cons
 	// TODO Check the need for this hack in future engine versions.
 
 	TStringBuilder<128> NotifyNameBuilder{
-		InPlace, TEXTVIEW("Als Set Grounded Entry Mode: "), GroundedEntryMode.GetTagName(), TEXTVIEW("                ")
+		InPlace, ANSITEXTVIEW("Als Set Grounded Entry Mode: "), GroundedEntryMode.GetTagName(), ANSITEXTVIEW("                ")
 	};
 
 	return FString{NotifyNameBuilder};

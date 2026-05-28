@@ -15,7 +15,7 @@ class ALS_API UAlsUtility : public UBlueprintFunctionLibrary
 	GENERATED_BODY()
 
 public:
-	static constexpr FStringView BoolToString(bool bValue);
+	static constexpr FAnsiStringView BoolToString(bool bValue);
 
 	UFUNCTION(BlueprintPure, Category = "ALS|Utility", Meta = (ReturnDisplayName = "Display String"))
 	static FString NameToDisplayString(FName Name, bool bNameIsBool);
@@ -35,7 +35,7 @@ public:
 	static bool TryGetMovementBaseAngularVelocity(const FBasedMovementInfo& BasedMovement, FVector& AngularVelocity);
 };
 
-constexpr FStringView UAlsUtility::BoolToString(const bool bValue)
+constexpr FAnsiStringView UAlsUtility::BoolToString(const bool bValue)
 {
-	return bValue ? TEXTVIEW("True") : TEXTVIEW("False");
+	return bValue ? ANSITEXTVIEW("True") : ANSITEXTVIEW("False");
 }

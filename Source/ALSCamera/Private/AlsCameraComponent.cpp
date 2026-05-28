@@ -403,7 +403,7 @@ FVector UAlsCameraComponent::CalculateCameraTrace(const FVector& CameraTargetLoc
 
 	const auto MeshScale{UE_REAL_TO_FLOAT(Character->GetMesh()->GetComponentScale().Z)};
 
-	static const FName MainTraceTag{FString::Printf(TEXT("%hs (Main Trace)"), __FUNCTION__)};
+	static const FName MainTraceTag{TStringView{FAnsiString::Printf("%s (Main Trace)", __FUNCTION__)}};
 
 	auto TraceStart{
 		FMath::Lerp(
@@ -427,7 +427,7 @@ FVector UAlsCameraComponent::CalculateCameraTrace(const FVector& CameraTargetLoc
 		}
 		else if (TryAdjustLocationBlockedByGeometry(TraceStart, bDisplayDebugCameraTraces))
 		{
-			static const FName AdjustedTraceTag{FString::Printf(TEXT("%hs (Adjusted Trace)"), __FUNCTION__)};
+			static const FName AdjustedTraceTag{TStringView{FAnsiString::Printf("%s (Adjusted Trace)", __FUNCTION__)}};
 
 			GetWorld()->SweepSingleByChannel(Hit, TraceStart, TraceEnd, FQuat::Identity, Settings->ThirdPerson.TraceChannel,
 			                                 CollisionShape, {AdjustedTraceTag, false, GetOwner()});
@@ -494,7 +494,7 @@ bool UAlsCameraComponent::TryAdjustLocationBlockedByGeometry(FVector& Location, 
 		Overlaps.Reset();
 	};
 
-	static const FName OverlapMultiTraceTag{FString::Printf(TEXT("%hs (Overlap Multi)"), __FUNCTION__)};
+	static const FName OverlapMultiTraceTag{TStringView{FAnsiString::Printf("%s (Overlap Multi)", __FUNCTION__)}};
 
 	if (!GetWorld()->OverlapMultiByChannel(Overlaps, Location, FQuat::Identity, Settings->ThirdPerson.TraceChannel,
 	                                       CollisionShape, {OverlapMultiTraceTag, false, GetOwner()}))
@@ -553,7 +553,7 @@ bool UAlsCameraComponent::TryAdjustLocationBlockedByGeometry(FVector& Location, 
 
 	Location += Adjustment;
 
-	static const FName FreeSpaceTraceTag{FString::Printf(TEXT("%hs (Free Space Overlap)"), __FUNCTION__)};
+	static const FName FreeSpaceTraceTag{TStringView{FAnsiString::Printf("%s (Free Space Overlap)", __FUNCTION__)}};
 
 	return !GetWorld()->OverlapBlockingTestByChannel(Location, FQuat::Identity, Settings->ThirdPerson.TraceChannel,
 	                                                 FCollisionShape::MakeSphere(Settings->ThirdPerson.TraceRadius * MeshScale),
