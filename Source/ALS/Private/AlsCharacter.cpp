@@ -1109,7 +1109,7 @@ void AAlsCharacter::SetInputDirection(FVector NewInputDirection)
 {
 	NewInputDirection = NewInputDirection.GetSafeNormal();
 
-	COMPARE_ASSIGN_AND_MARK_PROPERTY_DIRTY(ThisClass, InputDirection, NewInputDirection, this)
+	COMPARE_ASSIGN_AND_MARK_PROPERTY_DIRTY(ThisClass, InputDirection, NewInputDirection, this);
 }
 
 void AAlsCharacter::RefreshInput(const float DeltaTime)
@@ -1329,7 +1329,7 @@ void AAlsCharacter::RefreshViewNetworkSmoothing(const float DeltaTime)
 
 void AAlsCharacter::SetDesiredVelocityYawAngle(const float NewVelocityYawAngle)
 {
-	COMPARE_ASSIGN_AND_MARK_PROPERTY_DIRTY(ThisClass, DesiredVelocityYawAngle, NewVelocityYawAngle, this)
+	COMPARE_ASSIGN_AND_MARK_PROPERTY_DIRTY(ThisClass, DesiredVelocityYawAngle, NewVelocityYawAngle, this);
 }
 
 void AAlsCharacter::RefreshLocomotionEarly()

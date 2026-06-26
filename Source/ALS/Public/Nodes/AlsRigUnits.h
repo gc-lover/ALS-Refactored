@@ -6,15 +6,18 @@
 #include "Units/RigUnit.h"
 #include "AlsRigUnits.generated.h"
 
+/** Clamps a float value between 0.0f and 1.0f. */
 USTRUCT(DisplayName = "Clamp 01", Meta = (Category = "ALS"))
 struct ALS_API FAlsRigVMFunction_Clamp01Float : public FRigVMFunction_MathFloatBase
 {
 	GENERATED_BODY()
 
 public:
+	/** The value to clamp. */
 	UPROPERTY(Meta = (Input))
 	float Value{0.0f};
 
+	/** The clamped result. */
 	UPROPERTY(Meta = (Output))
 	float Result{0.0f};
 
@@ -23,12 +26,14 @@ public:
 	virtual void Execute() override;
 };
 
+/** Interpolates a vector towards a target using an exact damper. */
 USTRUCT(DisplayName = "Damper Exact (Vector)", Meta = (Category = "ALS"))
 struct ALS_API FAlsRigVMFunction_DamperExactVector : public FRigVMFunction_SimBase
 {
 	GENERATED_BODY()
 
 public:
+	/** The target vector to reach. */
 	UPROPERTY(Meta = (Input))
 	FVector Target{ForceInit};
 
@@ -36,6 +41,7 @@ public:
 	UPROPERTY(Meta = (Input, ClampMin = 0, ForceUnits = "s"))
 	float HalfLife{1.0f};
 
+	/** The current interpolated vector. */
 	UPROPERTY(Transient, Meta = (Output))
 	FVector Current{ForceInit};
 
@@ -50,12 +56,14 @@ public:
 	virtual void Execute() override;
 };
 
+/** Interpolates a quaternion towards a target using an exact damper. */
 USTRUCT(DisplayName = "Damper Exact (Quaternion)", Meta = (Category = "ALS"))
 struct ALS_API FAlsRigVMFunction_DamperExactQuaternion : public FRigVMFunction_SimBase
 {
 	GENERATED_BODY()
 
 public:
+	/** The target quaternion to reach. */
 	UPROPERTY(Meta = (Input))
 	FQuat Target{ForceInit};
 
@@ -63,6 +71,7 @@ public:
 	UPROPERTY(Meta = (Input, ClampMin = 0, ForceUnits = "s"))
 	float HalfLife{1.0f};
 
+	/** The current interpolated quaternion. */
 	UPROPERTY(Transient, Meta = (Output))
 	FQuat Current{ForceInit};
 
@@ -123,6 +132,7 @@ public:
 	virtual void Execute() override;
 };
 
+/** Conditional execution branch checking if the current world is a game world. */
 USTRUCT(DisplayName = "Is Game World", Meta = (Category = "ALS"))
 struct ALS_API FAlsRigVMFunction_IsGameWorld : public FRigVMFunction_ControlFlowBase
 {
@@ -132,12 +142,15 @@ public:
 	UPROPERTY(Transient, DisplayName = "Execute", Meta = (Input))
 	FRigVMExecuteContext ExecuteContext;
 
+	/** Execution path if the world is a game world. */
 	UPROPERTY(Transient, Meta = (Output))
 	FRigVMExecuteContext True;
 
+	/** Execution path if the world is not a game world (e.g. preview, editor). */
 	UPROPERTY(Transient, Meta = (Output))
 	FRigVMExecuteContext False;
 
+	/** Execution path completed execution of this node. */
 	UPROPERTY(meta=(Output))
 	FRigVMExecuteContext Completed;
 
