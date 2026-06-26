@@ -22,7 +22,7 @@ FString UAlsAnimNotifyState_EarlyBlendOut::GetNotifyName_Implementation() const
 	// For some reason editor cuts off some characters at the end of the string, so to avoid this we insert a bunch of spaces.
 	// TODO Check the need for this hack in future engine versions.
 
-	return FString{TEXTVIEW("Als Early Blend Out    ")};
+	return FString{ANSITEXTVIEW("Als Early Blend Out    ")};
 }
 
 #if WITH_EDITOR

@@ -38,7 +38,7 @@ FTransform UAlsMontageUtility::ExtractRootTransformFromMontage(const UAnimMontag
 		return FTransform::Identity;
 	}
 
-	const FAnimExtractContext ExtractionContext{static_cast<double>(Segment->ConvertTrackPosToAnimPos(Time))};
+	const FAnimExtractContext ExtractionContext{Segment->ConvertTrackPosToAnimPos(Time)};
 	return Sequence->ExtractRootTrackTransform(ExtractionContext, nullptr);
 }
 
@@ -60,7 +60,7 @@ FTransform UAlsMontageUtility::ExtractLastRootTransformFromMontage(const UAnimMo
 		return FTransform::Identity;
 	}
 
-	const FAnimExtractContext ExtractionContext{static_cast<double>(Segment.GetEndPos())};
+	const FAnimExtractContext ExtractionContext{Segment.GetEndPos()};
 	return Sequence->ExtractRootTrackTransform(ExtractionContext, nullptr);
 }
 

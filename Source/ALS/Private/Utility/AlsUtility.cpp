@@ -46,13 +46,13 @@ float UAlsUtility::GetFirstPlayerPingSeconds(const UObject* WorldContext)
 
 bool UAlsUtility::TryGetMovementBaseAngularVelocity(const FBasedMovementInfo& BasedMovement, FVector& AngularVelocity)
 {
-	if (!MovementBaseUtility::IsDynamicBase(BasedMovement.MovementBase))
+	if (!MovementBaseUtility::IsDynamicBase(&BasedMovement.MovementBaseInterfaceData))
 	{
 		AngularVelocity = FVector::ZeroVector;
 		return false;
 	}
 
-	const auto* Body{BasedMovement.MovementBase->GetBodyInstance(BasedMovement.BoneName)};
+	const auto* Body{BasedMovement.MovementBaseInterfaceData.GetBodyInstanceOwner()->GetBodyInstance(BasedMovement.BoneName)};
 	if (Body == nullptr)
 	{
 		AngularVelocity = FVector::ZeroVector;

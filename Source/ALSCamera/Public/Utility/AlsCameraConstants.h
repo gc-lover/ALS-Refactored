@@ -11,25 +11,25 @@ class ALSCAMERA_API UAlsCameraConstants : public UBlueprintFunctionLibrary
 protected:
 	// Animation Curves
 
-	inline static FName CameraOffsetXCurve{TEXTVIEW("CameraOffsetX")};
-	inline static FName CameraOffsetYCurve{TEXTVIEW("CameraOffsetY")};
-	inline static FName CameraOffsetZCurve{TEXTVIEW("CameraOffsetZ")};
-	inline static FName FovOffsetCurve{TEXTVIEW("FovOffset")};
-	inline static FName PivotOffsetXCurve{TEXTVIEW("PivotOffsetX")};
-	inline static FName PivotOffsetYCurve{TEXTVIEW("PivotOffsetY")};
-	inline static FName PivotOffsetZCurve{TEXTVIEW("PivotOffsetZ")};
-	inline static FName LocationLagXCurve{TEXTVIEW("LocationLagX")};
-	inline static FName LocationLagYCurve{TEXTVIEW("LocationLagY")};
-	inline static FName LocationLagZCurve{TEXTVIEW("LocationLagZ")};
-	inline static FName RotationLagCurve{TEXTVIEW("RotationLag")};
-	inline static FName FirstPersonOverrideCurve{TEXTVIEW("FirstPersonOverride")};
-	inline static FName TraceOverrideCurve{TEXTVIEW("TraceOverride")};
+	inline static FName CameraOffsetXCurve{ANSITEXTVIEW("CameraOffsetX")};
+	inline static FName CameraOffsetYCurve{ANSITEXTVIEW("CameraOffsetY")};
+	inline static FName CameraOffsetZCurve{ANSITEXTVIEW("CameraOffsetZ")};
+	inline static FName FovOffsetCurve{ANSITEXTVIEW("FovOffset")};
+	inline static FName PivotOffsetXCurve{ANSITEXTVIEW("PivotOffsetX")};
+	inline static FName PivotOffsetYCurve{ANSITEXTVIEW("PivotOffsetY")};
+	inline static FName PivotOffsetZCurve{ANSITEXTVIEW("PivotOffsetZ")};
+	inline static FName LocationLagXCurve{ANSITEXTVIEW("LocationLagX")};
+	inline static FName LocationLagYCurve{ANSITEXTVIEW("LocationLagY")};
+	inline static FName LocationLagZCurve{ANSITEXTVIEW("LocationLagZ")};
+	inline static FName RotationLagCurve{ANSITEXTVIEW("RotationLag")};
+	inline static FName FirstPersonOverrideCurve{ANSITEXTVIEW("FirstPersonOverride")};
+	inline static FName TraceOverrideCurve{ANSITEXTVIEW("TraceOverride")};
 
 	// Debug
 
-	inline static FName CameraCurvesDebugDisplay{TEXTVIEW("ALS.CameraCurves")};
-	inline static FName CameraShapesDebugDisplay{TEXTVIEW("ALS.CameraShapes")};
-	inline static FName CameraTracesDebugDisplay{TEXTVIEW("ALS.CameraTraces")};
+	inline static FName CameraCurvesDebugDisplay{ANSITEXTVIEW("ALS.CameraCurves")};
+	inline static FName CameraShapesDebugDisplay{ANSITEXTVIEW("ALS.CameraShapes")};
+	inline static FName CameraTracesDebugDisplay{ANSITEXTVIEW("ALS.CameraTraces")};
 
 public:
 	// Animation Curves

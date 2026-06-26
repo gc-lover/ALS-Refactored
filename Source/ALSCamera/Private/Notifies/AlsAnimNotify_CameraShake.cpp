@@ -16,7 +16,7 @@ UAlsAnimNotify_CameraShake::UAlsAnimNotify_CameraShake()
 
 FString UAlsAnimNotify_CameraShake::GetNotifyName_Implementation() const
 {
-	TStringBuilder<128> NotifyNameBuilder{InPlace, TEXTVIEW("Als Camera Shake: ")};
+	TStringBuilder<128> NotifyNameBuilder{InPlace, ANSITEXTVIEW("Als Camera Shake: ")};
 
 	if (IsValid(CameraShakeClass))
 	{
@@ -37,11 +37,11 @@ FString UAlsAnimNotify_CameraShake::GetNotifyName_Implementation() const
 		// For some reason editor cuts off some characters at the end of the string, so to avoid this we insert a bunch of spaces.
 		// TODO Check the need for this hack in future engine versions.
 
-		NotifyNameBuilder << TEXTVIEW("                ");
+		NotifyNameBuilder << ANSITEXTVIEW("                ");
 	}
 	else
 	{
-		NotifyNameBuilder << TEXTVIEW("    ");
+		NotifyNameBuilder << ANSITEXTVIEW("    ");
 	}
 
 	return FString{NotifyNameBuilder};

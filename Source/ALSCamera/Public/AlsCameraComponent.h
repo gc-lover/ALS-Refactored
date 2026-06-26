@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Components/SkeletalMeshComponent.h"
+#include "Interfaces/MovementBaseInterface.h"
 #include "Utility/AlsMath.h"
 #include "AlsCameraComponent.generated.h"
 
@@ -59,8 +60,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "State", Transient)
 	FQuat CameraRotationMovementBaseSpace{ForceInit};
 
-	UPROPERTY(BlueprintReadOnly, Category = "State", Transient)
-	TObjectPtr<UPrimitiveComponent> MovementBasePrimitive;
+	UPROPERTY(Transient)
+	FMovementBaseInterfaceData MovementBaseInterfaceData;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "State", Transient)
 	FName MovementBaseBoneName;

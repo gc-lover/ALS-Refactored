@@ -16,7 +16,7 @@ FString UAlsAnimNotifyState_SetLocomotionAction::GetNotifyName_Implementation() 
 	// TODO Check the need for this hack in future engine versions.
 
 	TStringBuilder<128> NotifyNameBuilder{
-		InPlace, TEXTVIEW("Als Set Locomotion Action: "), LocomotionAction.GetTagName(), TEXTVIEW("                ")
+		InPlace, ANSITEXTVIEW("Als Set Locomotion Action: "), LocomotionAction.GetTagName(), ANSITEXTVIEW("                ")
 	};
 
 	return FString{NotifyNameBuilder};

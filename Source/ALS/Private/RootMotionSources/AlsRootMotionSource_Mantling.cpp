@@ -80,7 +80,8 @@ void FAlsRootMotionSource_Mantling::PrepareRootMotion(const float SimulationDelt
 	FTransform StartTransform{StartRotation, StartLocation};
 	FTransform TargetTransform{TargetRotation, TargetLocation};
 
-	if (MovementBaseUtility::UseRelativeLocation(TargetPrimitive.Get()))
+	FMovementBaseInterfaceData MovementBaseData{TargetPrimitive.Get()};
+	if (MovementBaseUtility::UseRelativeLocation(&MovementBaseData))
 	{
 		// Convert the start and target transforms from target primitive space to world space.
 
@@ -165,7 +166,7 @@ UScriptStruct* FAlsRootMotionSource_Mantling::GetScriptStruct() const
 FString FAlsRootMotionSource_Mantling::ToSimpleString() const
 {
 	TStringBuilder<256> StringBuilder{
-		InPlace, ALS_GET_TYPE_STRING(FAlsRootMotionSource_Mantling), TEXTVIEW(" ("), InstanceName, TEXTVIEW(", "), LocalID, TEXT(')')
+		InPlace, ALS_GET_TYPE_STRING_ANSI(FAlsRootMotionSource_Mantling), ANSITEXTVIEW(" ("), InstanceName, ANSITEXTVIEW(", "), LocalID, ')'
 	};
 
 	return FString{StringBuilder};

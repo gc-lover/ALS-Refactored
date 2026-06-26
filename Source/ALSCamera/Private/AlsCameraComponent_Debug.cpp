@@ -173,7 +173,7 @@ void UAlsCameraComponent::DisplayDebugShapes(const UCanvas* Canvas, const float 
 
 	static const auto PivotTargetLocationText{
 		FText::AsCultureInvariant(FName::NameToDisplayString(
-			FString{GET_MEMBER_NAME_STRING_VIEW_CHECKED(ThisClass, PivotTargetLocation)}, false))
+			FString{GET_MEMBER_NAME_ANSI_STRING_VIEW_CHECKED(ThisClass, PivotTargetLocation)}, false))
 	};
 
 	auto Color{FLinearColor::Green};
@@ -182,11 +182,11 @@ void UAlsCameraComponent::DisplayDebugShapes(const UCanvas* Canvas, const float 
 	Text.Text = PivotTargetLocationText;
 	Text.Draw(Canvas->Canvas, {HorizontalLocation, VerticalLocation});
 
-	DebugStringBuilder << TEXTVIEW("X: ");
+	DebugStringBuilder << ANSITEXTVIEW("X: ");
 	DebugStringBuilder.Appendf(TEXT("%.2f"), PivotTargetLocation.X);
-	DebugStringBuilder << TEXTVIEW("Y: ");
+	DebugStringBuilder << ANSITEXTVIEW("Y: ");
 	DebugStringBuilder.Appendf(TEXT("%.2f"), PivotTargetLocation.Y);
-	DebugStringBuilder << TEXTVIEW("Z: ");
+	DebugStringBuilder << ANSITEXTVIEW("Z: ");
 	DebugStringBuilder.Appendf(TEXT("%.2f"), PivotTargetLocation.Z);
 
 	Text.Text = FText::AsCultureInvariant(DebugStringBuilder);
@@ -198,7 +198,7 @@ void UAlsCameraComponent::DisplayDebugShapes(const UCanvas* Canvas, const float 
 
 	static const auto PivotLagLocationText{
 		FText::AsCultureInvariant(FName::NameToDisplayString(
-			FString{GET_MEMBER_NAME_STRING_VIEW_CHECKED(ThisClass, PivotLagLocation)}, false))
+			FString{GET_MEMBER_NAME_ANSI_STRING_VIEW_CHECKED(ThisClass, PivotLagLocation)}, false))
 	};
 
 	Color = {1.0f, 0.5f, 0.0f};
@@ -207,11 +207,11 @@ void UAlsCameraComponent::DisplayDebugShapes(const UCanvas* Canvas, const float 
 	Text.Text = PivotLagLocationText;
 	Text.Draw(Canvas->Canvas, {HorizontalLocation, VerticalLocation});
 
-	DebugStringBuilder << TEXTVIEW("X: ");
+	DebugStringBuilder << ANSITEXTVIEW("X: ");
 	DebugStringBuilder.Appendf(TEXT("%.2f"), PivotLagLocation.X);
-	DebugStringBuilder << TEXTVIEW("Y: ");
+	DebugStringBuilder << ANSITEXTVIEW("Y: ");
 	DebugStringBuilder.Appendf(TEXT("%.2f"), PivotLagLocation.Y);
-	DebugStringBuilder << TEXTVIEW("Z: ");
+	DebugStringBuilder << ANSITEXTVIEW("Z: ");
 	DebugStringBuilder.Appendf(TEXT("%.2f"), PivotLagLocation.Z);
 
 	Text.Text = FText::AsCultureInvariant(DebugStringBuilder);
@@ -223,7 +223,7 @@ void UAlsCameraComponent::DisplayDebugShapes(const UCanvas* Canvas, const float 
 
 	static const auto PivotLocationText{
 		FText::AsCultureInvariant(FName::NameToDisplayString(
-			FString{GET_MEMBER_NAME_STRING_VIEW_CHECKED(ThisClass, PivotLocation)}, false))
+			FString{GET_MEMBER_NAME_ANSI_STRING_VIEW_CHECKED(ThisClass, PivotLocation)}, false))
 	};
 
 	Color = {0.0f, 0.75f, 1.0f};
@@ -232,11 +232,11 @@ void UAlsCameraComponent::DisplayDebugShapes(const UCanvas* Canvas, const float 
 	Text.Text = PivotLocationText;
 	Text.Draw(Canvas->Canvas, {HorizontalLocation, VerticalLocation});
 
-	DebugStringBuilder << TEXTVIEW("X: ");
+	DebugStringBuilder << ANSITEXTVIEW("X: ");
 	DebugStringBuilder.Appendf(TEXT("%.2f"), PivotLocation.X);
-	DebugStringBuilder << TEXTVIEW("Y: ");
+	DebugStringBuilder << ANSITEXTVIEW("Y: ");
 	DebugStringBuilder.Appendf(TEXT("%.2f"), PivotLocation.Y);
-	DebugStringBuilder << TEXTVIEW("Z: ");
+	DebugStringBuilder << ANSITEXTVIEW("Z: ");
 	DebugStringBuilder.Appendf(TEXT("%.2f"), PivotLocation.Z);
 
 	Text.Text = FText::AsCultureInvariant(DebugStringBuilder);
@@ -248,7 +248,7 @@ void UAlsCameraComponent::DisplayDebugShapes(const UCanvas* Canvas, const float 
 
 	static const auto CameraFieldOfViewText{
 		FText::AsCultureInvariant(FName::NameToDisplayString(
-			FString{GET_MEMBER_NAME_STRING_VIEW_CHECKED(ThisClass, CameraFieldOfView)}, false))
+			FString{GET_MEMBER_NAME_ANSI_STRING_VIEW_CHECKED(ThisClass, CameraFieldOfView)}, false))
 	};
 
 	Color = FLinearColor::White;
@@ -268,7 +268,7 @@ void UAlsCameraComponent::DisplayDebugShapes(const UCanvas* Canvas, const float 
 
 	static const auto RightShoulderText{
 		FText::AsCultureInvariant(FName::NameToDisplayString(
-			FString{GET_MEMBER_NAME_STRING_VIEW_CHECKED(ThisClass, bRightShoulder)}, true))
+			FString{GET_MEMBER_NAME_ANSI_STRING_VIEW_CHECKED(ThisClass, bRightShoulder)}, true))
 	};
 
 	Text.Text = RightShoulderText;

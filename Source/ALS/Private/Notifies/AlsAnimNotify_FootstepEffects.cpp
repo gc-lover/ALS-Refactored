@@ -40,11 +40,11 @@ void FAlsFootstepEffectSettings::PostEditChangeProperty(const FPropertyChangedEv
 
 void UAlsFootstepEffectsSettings::PostEditChangeProperty(FPropertyChangedEvent& ChangedEvent)
 {
-	if (ChangedEvent.GetMemberPropertyName() == GET_MEMBER_NAME_STRING_VIEW_CHECKED(ThisClass, DecalSpawnAngleThreshold))
+	if (ChangedEvent.GetMemberPropertyName() == GET_MEMBER_NAME_ANSI_STRING_VIEW_CHECKED(ThisClass, DecalSpawnAngleThreshold))
 	{
 		DecalSpawnAngleThresholdCos = FMath::Cos(FMath::DegreesToRadians(DecalSpawnAngleThreshold));
 	}
-	else if (ChangedEvent.GetMemberPropertyName() == GET_MEMBER_NAME_STRING_VIEW_CHECKED(ThisClass, Effects))
+	else if (ChangedEvent.GetMemberPropertyName() == GET_MEMBER_NAME_ANSI_STRING_VIEW_CHECKED(ThisClass, Effects))
 	{
 		for (auto& [SurfaceType, EffectSettings] : Effects)
 		{
@@ -62,7 +62,7 @@ FString UAlsAnimNotify_FootstepEffects::GetNotifyName_Implementation() const
 	// TODO Check the need for this hack in future engine versions.
 
 	TStringBuilder<64> NotifyNameBuilder{
-		InPlace, TEXTVIEW("Als Footstep Effects: "), AlsEnumUtility::GetNameStringByValue(FootBone), TEXTVIEW("        ")
+		InPlace, ANSITEXTVIEW("Als Footstep Effects: "), AlsEnumUtility::GetNameStringByValue(FootBone), ANSITEXTVIEW("        ")
 	};
 
 	return FString{NotifyNameBuilder};
@@ -145,10 +145,10 @@ void UAlsAnimNotify_FootstepEffects::Notify(USkeletalMeshComponent* Mesh, UAnimS
 
 	if (EffectSettings == nullptr)
 	{
-		for (const auto& [OtherSurfaceType, OtherEffectSettings] : FootstepEffectsSettings->Effects)
+		const auto* Pair{FootstepEffectsSettings->Effects.FindArbitraryElement()};
+		if (Pair != nullptr)
 		{
-			EffectSettings = &OtherEffectSettings;
-			break;
+			EffectSettings = &Pair->Value;
 		}
 
 		if (EffectSettings == nullptr)
@@ -236,7 +236,7 @@ void UAlsAnimNotify_FootstepEffects::SpawnSound(USkeletalMeshComponent* Mesh, co
 
 	if (IsValid(Audio))
 	{
-		Audio->SetIntParameter(FName{TEXTVIEW("FootstepType")}, static_cast<int32>(SoundType));
+		Audio->SetIntParameter(FName{ANSITEXTVIEW("FootstepType")}, static_cast<int32>(SoundType));
 	}
 }
 

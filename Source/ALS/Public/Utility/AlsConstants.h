@@ -11,87 +11,87 @@ class ALS_API UAlsConstants : public UBlueprintFunctionLibrary
 protected:
 	// Bones
 
-	inline static FName RootBone{TEXTVIEW("root")};
-	inline static FName PelvisBone{TEXTVIEW("pelvis")};
-	inline static FName HeadBone{TEXTVIEW("head")};
-	inline static FName Spine03Bone{TEXTVIEW("spine_03")};
-	inline static FName FootLeftBone{TEXTVIEW("foot_l")};
-	inline static FName FootRightBone{TEXTVIEW("foot_r")};
-	inline static FName HandLeftGunVirtualBone{TEXTVIEW("VB hand_l_to_ik_hand_gun")};
-	inline static FName HandRightGunVirtualBone{TEXTVIEW("VB hand_r_to_ik_hand_gun")};
-	inline static FName FootLeftIkBone{TEXTVIEW("ik_foot_l")};
-	inline static FName FootRightIkBone{TEXTVIEW("ik_foot_r")};
-	inline static FName FootLeftVirtualBone{TEXTVIEW("VB foot_l")};
-	inline static FName FootRightVirtualBone{TEXTVIEW("VB foot_r")};
+	inline static FName RootBone{ANSITEXTVIEW("root")};
+	inline static FName PelvisBone{ANSITEXTVIEW("pelvis")};
+	inline static FName HeadBone{ANSITEXTVIEW("head")};
+	inline static FName Spine03Bone{ANSITEXTVIEW("spine_03")};
+	inline static FName FootLeftBone{ANSITEXTVIEW("foot_l")};
+	inline static FName FootRightBone{ANSITEXTVIEW("foot_r")};
+	inline static FName HandLeftGunVirtualBone{ANSITEXTVIEW("VB hand_l_to_ik_hand_gun")};
+	inline static FName HandRightGunVirtualBone{ANSITEXTVIEW("VB hand_r_to_ik_hand_gun")};
+	inline static FName FootLeftIkBone{ANSITEXTVIEW("ik_foot_l")};
+	inline static FName FootRightIkBone{ANSITEXTVIEW("ik_foot_r")};
+	inline static FName FootLeftVirtualBone{ANSITEXTVIEW("VB foot_l")};
+	inline static FName FootRightVirtualBone{ANSITEXTVIEW("VB foot_r")};
 
 	// Animation Slots
 
-	inline static FName TransitionSlot{TEXTVIEW("Transition")};
-	inline static FName TurnInPlaceStandingSlot{TEXTVIEW("TurnInPlaceStanding")};
-	inline static FName TurnInPlaceCrouchingSlot{TEXTVIEW("TurnInPlaceCrouching")};
+	inline static FName TransitionSlot{ANSITEXTVIEW("Transition")};
+	inline static FName TurnInPlaceStandingSlot{ANSITEXTVIEW("TurnInPlaceStanding")};
+	inline static FName TurnInPlaceCrouchingSlot{ANSITEXTVIEW("TurnInPlaceCrouching")};
 
 	// Layering Animation Curves
 
-	inline static FName LayerHeadCurve{TEXTVIEW("LayerHead")};
-	inline static FName LayerHeadAdditiveCurve{TEXTVIEW("LayerHeadAdditive")};
-	inline static FName LayerHeadSlotCurve{TEXTVIEW("LayerHeadSlot")};
-	inline static FName LayerArmLeftCurve{TEXTVIEW("LayerArmLeft")};
-	inline static FName LayerArmLeftAdditiveCurve{TEXTVIEW("LayerArmLeftAdditive")};
-	inline static FName LayerArmLeftLocalSpaceCurve{TEXTVIEW("LayerArmLeftLocalSpace")};
-	inline static FName LayerArmLeftSlotCurve{TEXTVIEW("LayerArmLeftSlot")};
-	inline static FName LayerArmRightCurve{TEXTVIEW("LayerArmRight")};
-	inline static FName LayerArmRightAdditiveCurve{TEXTVIEW("LayerArmRightAdditive")};
-	inline static FName LayerArmRightLocalSpaceCurve{TEXTVIEW("LayerArmRightLocalSpace")};
-	inline static FName LayerArmRightSlotCurve{TEXTVIEW("LayerArmRightSlot")};
-	inline static FName LayerHandLeftCurve{TEXTVIEW("LayerHandLeft")};
-	inline static FName LayerHandRightCurve{TEXTVIEW("LayerHandRight")};
-	inline static FName LayerSpineCurve{TEXTVIEW("LayerSpine")};
-	inline static FName LayerSpineAdditiveCurve{TEXTVIEW("LayerSpineAdditive")};
-	inline static FName LayerSpineSlotCurve{TEXTVIEW("LayerSpineSlot")};
-	inline static FName LayerPelvisCurve{TEXTVIEW("LayerPelvis")};
-	inline static FName LayerPelvisSlotCurve{TEXTVIEW("LayerPelvisSlot")};
-	inline static FName LayerLegsCurve{TEXTVIEW("LayerLegs")};
-	inline static FName LayerLegsSlotCurve{TEXTVIEW("LayerLegsSlot")};
-	inline static FName HandLeftIkCurve{TEXTVIEW("HandLeftIk")};
-	inline static FName HandRightIkCurve{TEXTVIEW("HandRightIk")};
-	inline static FName ViewBlockCurve{TEXTVIEW("ViewBlock")};
-	inline static FName HipsDirectionLockCurve{TEXTVIEW("HipsDirectionLock")};
+	inline static FName LayerHeadCurve{ANSITEXTVIEW("LayerHead")};
+	inline static FName LayerHeadAdditiveCurve{ANSITEXTVIEW("LayerHeadAdditive")};
+	inline static FName LayerHeadSlotCurve{ANSITEXTVIEW("LayerHeadSlot")};
+	inline static FName LayerArmLeftCurve{ANSITEXTVIEW("LayerArmLeft")};
+	inline static FName LayerArmLeftAdditiveCurve{ANSITEXTVIEW("LayerArmLeftAdditive")};
+	inline static FName LayerArmLeftLocalSpaceCurve{ANSITEXTVIEW("LayerArmLeftLocalSpace")};
+	inline static FName LayerArmLeftSlotCurve{ANSITEXTVIEW("LayerArmLeftSlot")};
+	inline static FName LayerArmRightCurve{ANSITEXTVIEW("LayerArmRight")};
+	inline static FName LayerArmRightAdditiveCurve{ANSITEXTVIEW("LayerArmRightAdditive")};
+	inline static FName LayerArmRightLocalSpaceCurve{ANSITEXTVIEW("LayerArmRightLocalSpace")};
+	inline static FName LayerArmRightSlotCurve{ANSITEXTVIEW("LayerArmRightSlot")};
+	inline static FName LayerHandLeftCurve{ANSITEXTVIEW("LayerHandLeft")};
+	inline static FName LayerHandRightCurve{ANSITEXTVIEW("LayerHandRight")};
+	inline static FName LayerSpineCurve{ANSITEXTVIEW("LayerSpine")};
+	inline static FName LayerSpineAdditiveCurve{ANSITEXTVIEW("LayerSpineAdditive")};
+	inline static FName LayerSpineSlotCurve{ANSITEXTVIEW("LayerSpineSlot")};
+	inline static FName LayerPelvisCurve{ANSITEXTVIEW("LayerPelvis")};
+	inline static FName LayerPelvisSlotCurve{ANSITEXTVIEW("LayerPelvisSlot")};
+	inline static FName LayerLegsCurve{ANSITEXTVIEW("LayerLegs")};
+	inline static FName LayerLegsSlotCurve{ANSITEXTVIEW("LayerLegsSlot")};
+	inline static FName HandLeftIkCurve{ANSITEXTVIEW("HandLeftIk")};
+	inline static FName HandRightIkCurve{ANSITEXTVIEW("HandRightIk")};
+	inline static FName ViewBlockCurve{ANSITEXTVIEW("ViewBlock")};
+	inline static FName HipsDirectionLockCurve{ANSITEXTVIEW("HipsDirectionLock")};
 
 	// Pose Animation Curves
 
-	inline static FName PoseGaitCurve{TEXTVIEW("PoseGait")};
-	inline static FName PoseMovingCurve{TEXTVIEW("PoseMoving")};
-	inline static FName PoseStandingCurve{TEXTVIEW("PoseStanding")};
-	inline static FName PoseCrouchingCurve{TEXTVIEW("PoseCrouching")};
-	inline static FName PoseGroundedCurve{TEXTVIEW("PoseGrounded")};
-	inline static FName PoseInAirCurve{TEXTVIEW("PoseInAir")};
-	inline static FName PoseAimingCurve{TEXTVIEW("PoseAiming")};
+	inline static FName PoseGaitCurve{ANSITEXTVIEW("PoseGait")};
+	inline static FName PoseMovingCurve{ANSITEXTVIEW("PoseMoving")};
+	inline static FName PoseStandingCurve{ANSITEXTVIEW("PoseStanding")};
+	inline static FName PoseCrouchingCurve{ANSITEXTVIEW("PoseCrouching")};
+	inline static FName PoseGroundedCurve{ANSITEXTVIEW("PoseGrounded")};
+	inline static FName PoseInAirCurve{ANSITEXTVIEW("PoseInAir")};
+	inline static FName PoseAimingCurve{ANSITEXTVIEW("PoseAiming")};
 
 	// Feet Animation Curves
 
-	inline static FName FootLeftIkCurve{TEXTVIEW("FootLeftIk")};
-	inline static FName FootLeftLockCurve{TEXTVIEW("FootLeftLock")};
-	inline static FName FootRightIkCurve{TEXTVIEW("FootRightIk")};
-	inline static FName FootRightLockCurve{TEXTVIEW("FootRightLock")};
-	inline static FName FootPlantedCurve{TEXTVIEW("FootPlanted")};
-	inline static FName FeetCrossingCurve{TEXTVIEW("FeetCrossing")};
+	inline static FName FootLeftIkCurve{ANSITEXTVIEW("FootLeftIk")};
+	inline static FName FootLeftLockCurve{ANSITEXTVIEW("FootLeftLock")};
+	inline static FName FootRightIkCurve{ANSITEXTVIEW("FootRightIk")};
+	inline static FName FootRightLockCurve{ANSITEXTVIEW("FootRightLock")};
+	inline static FName FootPlantedCurve{ANSITEXTVIEW("FootPlanted")};
+	inline static FName FeetCrossingCurve{ANSITEXTVIEW("FeetCrossing")};
 
 	// Other Animation Curves
 
-	inline static FName RotationYawSpeedCurve{TEXTVIEW("RotationYawSpeed")};
-	inline static FName RotationYawOffsetCurve{TEXTVIEW("RotationYawOffset")};
-	inline static FName AllowTransitionsCurve{TEXTVIEW("AllowTransitions")};
-	inline static FName SprintBlockCurve{TEXTVIEW("SprintBlock")};
-	inline static FName GroundPredictionBlockCurve{TEXTVIEW("GroundPredictionBlock")};
-	inline static FName FootstepSoundBlockCurve{TEXTVIEW("FootstepSoundBlock")};
+	inline static FName RotationYawSpeedCurve{ANSITEXTVIEW("RotationYawSpeed")};
+	inline static FName RotationYawOffsetCurve{ANSITEXTVIEW("RotationYawOffset")};
+	inline static FName AllowTransitionsCurve{ANSITEXTVIEW("AllowTransitions")};
+	inline static FName SprintBlockCurve{ANSITEXTVIEW("SprintBlock")};
+	inline static FName GroundPredictionBlockCurve{ANSITEXTVIEW("GroundPredictionBlock")};
+	inline static FName FootstepSoundBlockCurve{ANSITEXTVIEW("FootstepSoundBlock")};
 
 	// Debug
 
-	inline static FName CurvesDebugDisplay{TEXTVIEW("ALS.Curves")};
-	inline static FName StateDebugDisplay{TEXTVIEW("ALS.State")};
-	inline static FName ShapesDebugDisplay{TEXTVIEW("ALS.Shapes")};
-	inline static FName TracesDebugDisplay{TEXTVIEW("ALS.Traces")};
-	inline static FName MantlingDebugDisplay{TEXTVIEW("ALS.Mantling")};
+	inline static FName CurvesDebugDisplay{ANSITEXTVIEW("ALS.Curves")};
+	inline static FName StateDebugDisplay{ANSITEXTVIEW("ALS.State")};
+	inline static FName ShapesDebugDisplay{ANSITEXTVIEW("ALS.Shapes")};
+	inline static FName TracesDebugDisplay{ANSITEXTVIEW("ALS.Traces")};
+	inline static FName MantlingDebugDisplay{ANSITEXTVIEW("ALS.Mantling")};
 
 public:
 	// Bones

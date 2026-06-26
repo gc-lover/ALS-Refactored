@@ -7,7 +7,7 @@
 #include "AlsRigUnits.generated.h"
 
 /** Clamps a float value between 0.0f and 1.0f. */
-USTRUCT(DisplayName = "Clamp 01", Meta = (Category = "ALS"))
+USTRUCT(DisplayName = "Clamp 01", DocumentationPolicy = "None", Meta = (Category = "ALS"))
 struct ALS_API FAlsRigVMFunction_Clamp01Float : public FRigVMFunction_MathFloatBase
 {
 	GENERATED_BODY()
@@ -27,7 +27,7 @@ public:
 };
 
 /** Interpolates a vector towards a target using an exact damper. */
-USTRUCT(DisplayName = "Damper Exact (Vector)", Meta = (Category = "ALS"))
+USTRUCT(DisplayName = "Damper Exact (Vector)", DocumentationPolicy = "None", Meta = (Category = "ALS"))
 struct ALS_API FAlsRigVMFunction_DamperExactVector : public FRigVMFunction_SimBase
 {
 	GENERATED_BODY()
@@ -57,7 +57,7 @@ public:
 };
 
 /** Interpolates a quaternion towards a target using an exact damper. */
-USTRUCT(DisplayName = "Damper Exact (Quaternion)", Meta = (Category = "ALS"))
+USTRUCT(DisplayName = "Damper Exact (Quaternion)", DocumentationPolicy = "None", Meta = (Category = "ALS"))
 struct ALS_API FAlsRigVMFunction_DamperExactQuaternion : public FRigVMFunction_SimBase
 {
 	GENERATED_BODY()
@@ -87,7 +87,7 @@ public:
 };
 
 /// Calculates the projection location and direction of the perpendicular to AC through B.
-USTRUCT(DisplayName = "Calculate Pole Vector", Meta = (Category = "ALS", NodeColor = "0.05 0.25 0.05"))
+USTRUCT(DisplayName = "Calculate Pole Vector", DocumentationPolicy = "None", Meta = (Category = "ALS", NodeColor = "0.05 0.25 0.05"))
 struct ALS_API FAlsRigUnit_CalculatePoleVector : public FRigUnit
 {
 	GENERATED_BODY()
@@ -133,7 +133,7 @@ public:
 };
 
 /** Conditional execution branch checking if the current world is a game world. */
-USTRUCT(DisplayName = "Is Game World", Meta = (Category = "ALS"))
+USTRUCT(DisplayName = "Is Game World", DocumentationPolicy = "None", Meta = (Pure, Category = "ALS"))
 struct ALS_API FAlsRigVMFunction_IsGameWorld : public FRigVMFunction_ControlFlowBase
 {
 	GENERATED_BODY()
@@ -162,5 +162,8 @@ public:
 	// ReSharper disable once CppFunctionIsNotImplemented
 	virtual void Execute() override;
 
+#if WITH_EDITORONLY_DATA
+protected:
 	virtual const TArray<FName>& GetControlFlowBlocks_Impl() const override;
+#endif
 };

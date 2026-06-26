@@ -14,7 +14,7 @@ struct ALSCAMERA_API FAlsFirstPersonCameraSettings
 	float FieldOfView{90.0f};
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ALS")
-	FName CameraSocketName{TEXTVIEW("FirstPersonCamera")};
+	FName CameraSocketName{ANSITEXTVIEW("FirstPersonCamera")};
 };
 
 USTRUCT(BlueprintType)
@@ -48,10 +48,10 @@ struct ALSCAMERA_API FAlsThirdPersonCameraSettings
 	TEnumAsByte<ECollisionChannel> TraceChannel{ECC_Visibility};
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ALS")
-	FName TraceShoulderLeftSocketName{TEXTVIEW("ThirdPersonTraceShoulderLeft")};
+	FName TraceShoulderLeftSocketName{ANSITEXTVIEW("ThirdPersonTraceShoulderLeft")};
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ALS")
-	FName TraceShoulderRightSocketName{TEXTVIEW("ThirdPersonTraceShoulderRight")};
+	FName TraceShoulderRightSocketName{ANSITEXTVIEW("ThirdPersonTraceShoulderRight")};
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ALS")
 	FVector3f TraceOverrideOffset{0.0f, 0.0f, 40.0f};

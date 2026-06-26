@@ -3,13 +3,13 @@
 #include "AlsAnimationInstanceProxy.h"
 #include "AlsCharacter.h"
 #include "DrawDebugHelpers.h"
-#include "Animation/SpringMath.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Curves/CurveFloat.h"
 #include "Engine/SkeletalMesh.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/WorldSettings.h"
+#include "Math/SpringMath.h"
 #include "Settings/AlsAnimationInstanceSettings.h"
 #include "Settings/AlsCharacterSettings.h"
 #include "Utility/AlsConstants.h"
@@ -260,9 +260,10 @@ void UAlsAnimationInstance::RefreshMovementBaseOnGameThread()
 {
 	const auto& BasedMovement{Character->GetBasedMovement()};
 
-	if (BasedMovement.MovementBase != MovementBase.Primitive || BasedMovement.BoneName != MovementBase.BoneName)
+	if (BasedMovement.MovementBaseInterfaceData != MovementBase.MovementBaseInterfaceData ||
+	    BasedMovement.BoneName != MovementBase.BoneName)
 	{
-		MovementBase.Primitive = BasedMovement.MovementBase;
+		MovementBase.MovementBaseInterfaceData = BasedMovement.MovementBaseInterfaceData;
 		MovementBase.BoneName = BasedMovement.BoneName;
 		MovementBase.bBaseChanged = true;
 	}
@@ -276,7 +277,7 @@ void UAlsAnimationInstance::RefreshMovementBaseOnGameThread()
 
 	const auto PreviousRotation{MovementBase.Rotation};
 
-	MovementBaseUtility::GetMovementBaseTransform(BasedMovement.MovementBase, BasedMovement.BoneName,
+	MovementBaseUtility::GetMovementBaseTransform(&BasedMovement.MovementBaseInterfaceData, BasedMovement.BoneName,
 	                                              MovementBase.Location, MovementBase.Rotation);
 
 	MovementBase.DeltaRotation = MovementBase.bHasRelativeLocation && !MovementBase.bBaseChanged
@@ -664,7 +665,6 @@ void UAlsAnimationInstance::RefreshHead()
 		// https://theorangeduck.com/page/spring-roll-call#critical
 
 		const auto SmoothingTime{
-#pragma warning(suppress : 4996) // TODO Check the need for this pragma in future engine versions.
 			SpringMath::HalfLifeToSmoothingTime(HeadState.bSwitchingLookSides
 				                                    ? Settings->Head.SwitchLookSidesYawAngleInterpolationHalfLife
 				                                    : bFirstPerson
@@ -672,8 +672,7 @@ void UAlsAnimationInstance::RefreshHead()
 				                                    : Settings->Head.YawAngleInterpolationHalfLife)
 		};
 
-		FMath::CriticallyDampedSmoothing(HeadState.YawAngle, HeadState.YawVelocity, TargetYawAngle,
-		                                 0.0f, EffectiveDeltaTime, SmoothingTime);
+		SpringMath::CriticalSpringDamper(HeadState.YawAngle, HeadState.YawVelocity, TargetYawAngle, SmoothingTime, DeltaTime);
 	}
 
 	HeadState.YawAmount = HeadState.YawAngle / 360.0f + 0.5f;
